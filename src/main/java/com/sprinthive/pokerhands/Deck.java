@@ -28,6 +28,13 @@ public class Deck {
             throw new IllegalArgumentException("Number of cards to pick from a deck must be 52 or less.");
         }
         //Todo: This method still needs to be implemented
-        return null;
+        List<Card> DeckpickedCards = new ArrayList<>(cards.subList(cards.size() - numberOfCards, cards.size()));
+        cards.removeAll(DeckpickedCards);
+
+        return DeckpickedCards.toArray(new Card[0]);
     }
 }
+
+//Created a new list to store the picked number of cards
+//Picked the cards from the deck of 52 cards using subList
+//Updated the deck of cards by removing the picked cards
