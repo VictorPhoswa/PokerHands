@@ -27,6 +27,13 @@ public class Deck {
         if(numberOfCards > 52){
             throw new IllegalArgumentException("Number of cards to pick from a deck must be 52 or less.");
         }
+        else if(cards.size() < numberOfCards){
+            throw new IllegalArgumentException("Number of cards to pick from a deck must be less than the deck size.");
+        }
+        else if(cards.size() == 0){
+            throw new IllegalArgumentException("The deck size is zero.");
+        }
+        
         //Todo: This method still needs to be implemented
         List<Card> DeckpickedCards = new ArrayList<>(cards.subList(cards.size() - numberOfCards, cards.size()));
         cards.removeAll(DeckpickedCards);
